@@ -1,14 +1,21 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
 import './App.css'
+import QuizCard from './components/QuizCard'
+import { examQuestions } from './constants'
+
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
       <p>yoyo!!</p>
+      <div>
+        {
+          examQuestions.map((oneQuestion,index)=>(
+            <QuizCard quizQuestions={oneQuestion} key={index} />
+          ))
+        }
+      </div>
     </>
   )
 }
